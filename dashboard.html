@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    #overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999;
+    }
+    #modal {
+      background: white; border-radius: 12px;
+      padding: 2rem; max-width: 380px; text-align: center;
+    }
+    #modal h2 { margin: 0 0 12px; font-size: 18px; color: #333; }
+    #modal p  { color: #555; font-size: 14px; line-height: 1.8; margin: 0; }
+    #modal button {
+      margin-top: 1.25rem; background: #185FA5; color: white;
+      border: none; border-radius: 8px; padding: 10px 24px;
+      font-size: 14px; cursor: pointer; width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="overlay">
+    <div id="modal">
+      <h2>⚠️ ข้อมูลที่ท่านเห็นอยู่นี้เป็นภาพรวมของผู้ทำแบบประเมินฯ ทั้งหมด</h2>
+      <p>กรุณาเลือก <strong>รหัสทะเบียน</strong> หรือ <strong>ชื่อวิสาหกิจชุมชน/เครือข่ายวิสาหกิจชุมชน</strong> เพื่อดูผลการประเมินศักยภาพเชิงธุรกิจเบื้องต้นของท่าน</p>
+      <button onclick="document.getElementById('overlay').style.display='none'">
+        รับทราบ
+      </button>
+    </div>
+  </div>
+
+  <iframe width="100%" height="100%" 
+  src="https://lookerstudio.google.com/embed/reporting/7e069c8f-edcd-4e51-8c50-565ba6c8b46e/page/p_aurxmarw1d"
+  frameborder="0" style="border:0; height:100vh;" allowfullscreen></iframe>
+
+</body>
+</html>
