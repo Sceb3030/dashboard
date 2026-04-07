@@ -2,7 +2,6 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://lookerstudio.google.com/embed/reporting/7e069c8f-edcd-4e51-8c50-565ba6c8b46e/page/p_aurxmarw1d">
   <title>Dashboard</title>
   <style>
     body { margin: 0; font-family: sans-serif; }
@@ -23,6 +22,13 @@
       border: none; border-radius: 8px; padding: 10px 24px;
       font-size: 14px; cursor: pointer; width: 100%;
     }
+    #dashboard-btn {
+      position: fixed; bottom: 24px; right: 24px;
+      background: #1a5c2a; color: white;
+      border: none; border-radius: 8px; padding: 12px 24px;
+      font-size: 15px; font-weight: bold; cursor: pointer;
+      z-index: 9998; box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
@@ -30,11 +36,16 @@
     <div id="modal">
       <h2>⚠️ ข้อมูลที่ปรากฏอยู่นี้เป็นภาพรวมของผู้ทำแบบประเมินฯ ทั้งหมด</h2>
       <p>กรุณาเลือก <strong>รหัสทะเบียน</strong> หรือ <strong>ชื่อวิสาหกิจชุมชน/เครือข่ายวิสาหกิจชุมชน</strong> เพื่อดูผลการประเมินศักยภาพเชิงธุรกิจเบื้องต้นของท่าน</p>
-      <button onclick="document.getElementById('overlay').style.display='none'; document.querySelector('iframe').style.display='block'">
+      <button onclick="document.getElementById('overlay').style.display='none'">
         รับทราบ
       </button>
     </div>
   </div>
+
+  <button id="dashboard-btn" onclick="window.open('https://sceb3030.github.io/dashboard/dashboard.html','_blank')">
+    🖥️ Dashboard
+  </button>
+
   <iframe width="100%" height="100%" 
   src="https://lookerstudio.google.com/embed/reporting/7e069c8f-edcd-4e51-8c50-565ba6c8b46e/page/p_aurxmarw1d"
   frameborder="0" style="border:0; height:100vh;" allowfullscreen></iframe>
