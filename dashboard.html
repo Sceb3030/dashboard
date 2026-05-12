@@ -6,7 +6,7 @@
   <title>Dashboard</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; background: #f0f0f0; display: flex; justify-content: center; }
+    body { font-family: sans-serif; background: #f0f0f0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
     #overlay {
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.5);
@@ -24,24 +24,51 @@
       border: none; border-radius: 8px; padding: 10px 24px;
       font-size: 14px; cursor: pointer; width: 100%;
     }
+    #main {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    #main h1 { font-size: 20px; color: #333; margin-bottom: 8px; }
+    #main p { color: #666; font-size: 14px; line-height: 1.8; margin-bottom: 24px; }
+    #openBtn {
+      background: #185FA5; color: white;
+      border: none; border-radius: 8px; padding: 14px 32px;
+      font-size: 16px; cursor: pointer;
+    }
+    #openBtn:hover { background: #0c447c; }
+    .note { margin-top: 16px; font-size: 12px; color: #999; }
   </style>
 </head>
 <body>
+
   <div id="overlay">
     <div id="modal">
       <h2>⚠️ ข้อมูลที่ปรากฏอยู่นี้เป็นภาพรวมของผู้ทำแบบประเมินฯ ทั้งหมด</h2>
       <p>กรุณาเลือก <strong>รหัสทะเบียน</strong> หรือ <strong>ชื่อวิสาหกิจชุมชน/เครือข่ายวิสาหกิจชุมชน</strong> เพื่อดูผลการประเมินศักยภาพเชิงธุรกิจเบื้องต้นของท่าน<br><br>
       หากข้อมูลของท่าน<strong>ยังไม่ปรากฏ</strong> กรุณากลับมาตรวจสอบใหม่อีกครั้งหลังจากนี้ <strong>5–10 นาที</strong></p>
-      <button onclick="document.getElementById('overlay').style.display='none'">
-        รับทราบ
-      </button>
+      <button onclick="showMain()">รับทราบ</button>
     </div>
   </div>
-  <iframe
-    src="https://lookerstudio.google.com/embed/reporting/7e069c8f-edcd-4e51-8c50-565ba6c8b46e/page/p_aurxmarw1d"
-    frameborder="0"
-    style="border:0; width:1240px; height:1754px; display:block;"
-    allowfullscreen>
-  </iframe>
+
+  <div id="main">
+    <h1>📊 Dashboard ผลการประเมินศักยภาพเชิงธุรกิจ</h1>
+    <p>ของวิสาหกิจชุมชนและเครือข่ายวิสาหกิจชุมชน</p>
+    <button id="openBtn" onclick="window.open('https://lookerstudio.google.com/reporting/7e069c8f-edcd-4e51-8c50-565ba6c8b46e/page/p_aurxmarw1d','_blank')">
+      เปิด Dashboard
+    </button>
+    <p class="note">* ระบบจะเปิด Dashboard ในหน้าต่างใหม่</p>
+  </div>
+
+  <script>
+    function showMain() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('main').style.display = 'flex';
+    }
+  </script>
 </body>
 </html>
